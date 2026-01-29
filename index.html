@@ -1,1 +1,31 @@
-index.html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Harcama Takibi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<h1>Harcama Takip Uygulaması</h1>
+
+<input id="tutar" type="number" placeholder="Tutar (TL)">
+<button onclick="ekle()">Ekle</button>
+
+<ul id="liste"></ul>
+
+<script>
+function ekle() {
+  var tutar = document.getElementById("tutar").value;
+  if (tutar === "") return;
+
+  var li = document.createElement("li");
+  li.innerText = tutar + " TL";
+  document.getElementById("liste").appendChild(li);
+
+  document.getElementById("tutar").value = "";
+}
+</script>
+
+</body>
+</html>
